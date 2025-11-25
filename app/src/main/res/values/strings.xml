@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">proyectomovilesgrupo3</string>
+    <string name="session_title">Agenda tu sesion</string>
+    <string name="session_description">Define el cuándo y el dónde para reunirte con tu tutor.</string>
+    <string name="session_date">¿Cuándo te quieres reunir?</string>
+    <string name="session_hour">Horas disponibles</string>
+    <string name="session_place">¿Dónde nos vemos?</string>
+    <string name="session_note">Nota: opcional</string>
+    <string name="session_note_example">Ej. Quiero revisar derivadas parciales...</string>
+    <string name="session_btn_next">Siguiente</string>
+    <string name="tutor_list_title">Lista de Tutores</string>
+    <string name="tutor_list_back_button">Botón de retroceso</string>
+    <string name="tutor_list_filter_icon">Icono de filtro</string>
+    <string name="tutor_list_no_filter">Sin Filtro</string>
+    <string name="tutor_list_avatar">Avatar del tutor</string>
+    <string name="tutor_list_rating">Tarifa: $5/hora</string>
+    <string name="tutor_list_menu_agenda">Menú agenda</string>
+    <string name="tutor_list_menu_view">Menú vista</string>
+    <string name="confirm_title">Confirmación</string>
+    <string name="confirm_card_title">Confirmación de Tutoría</string>
+    <string name="confirm_where_label">Dónde:</string>
+    <string name="confirm_where_hint">Biblioteca General</string>
+    <string name="confirm_when_label">Cuándo:</string>
+    <string name="confirm_when_hint">Martes 16, 10:00 hrs</string>
+    <string name="confirm_summary_label">Resumen</string>
+    <string name="confirm_summary_hint">Ej. Quiero revisar derivadas parciales, o Necesito ayuda con el capítulo 5.</string>
+    <string name="confirm_button_confirm">Confirmar Solicitud</string>
+    <string name="confirm_button_cancel">Cancelar Solicitud</string>
+    <string name="feedback_title">Opinión</string>
+    <string name="feedback_subtitle">Feedback de tutoría</string>
+    <string name="feedback_opinion_label">Danos tu opinión:</string>
+    <string name="feedback_opinion_hint">¿Qué te ha parecido la tutoría?</string>
+    <string name="feedback_button_send">Enviar feedback</string>
+    <string name="feedback_star_content">Estrella de calificación</string>
+</resources>
