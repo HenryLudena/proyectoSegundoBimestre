@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "600311254169",
+    "project_id": "proyectobimestregrupo3",
+    "storage_bucket": "proyectobimestregrupo3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600311254169:android:261eb4d4d8555e543ebc08",
+        "android_client_info": {
+          "package_name": "ludena.henry.proyectomovilesgrupo3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYfqdpe9okI7cnDzKkZEG1JhsnvkaJPtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

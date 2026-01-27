@@ -39,4 +39,8 @@
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="login_button_text">Ingresar</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="error_email_required">Email is required</string>
+    <string name="error_password_min_length">The password must have at least 3
+characters</string>
 </resources>
