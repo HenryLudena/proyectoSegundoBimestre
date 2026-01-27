@@ -32,4 +32,11 @@
     <string name="feedback_opinion_hint">¿Qué te ha parecido la tutoría?</string>
     <string name="feedback_button_send">Enviar feedback</string>
     <string name="feedback_star_content">Estrella de calificación</string>
+    <string name="login_graduation_icon">Icono de birrete</string>
+    <string name="login_hello">Hola!</string>
+    <string name="login_welcome">Bienvenido</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_button_text">Ingresar</string>
 </resources>

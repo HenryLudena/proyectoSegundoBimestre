@@ -34,7 +34,6 @@
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:src="@drawable/back_svgrepo_com"
-            android:tint="#FFFFFF"
             android:contentDescription="@string/tutor_list_back_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/title"
@@ -57,7 +56,6 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@android:drawable/ic_menu_sort_by_size"
-            android:tint="#000"
             android:contentDescription="@string/tutor_list_filter_icon" />
 
         <TextView
@@ -467,6 +465,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
+            android:id="@+id/btnList"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/list_svgrepo_com"
@@ -474,6 +473,7 @@
             android:layout_weight="1" />
 
         <ImageView
+            android:id="@+id/btnHome"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/home_svgrepo_com"

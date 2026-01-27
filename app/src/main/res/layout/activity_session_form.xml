@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="">
+    tools:context=".SessionFormActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
@@ -33,7 +33,6 @@
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:src="@drawable/back_svgrepo_com"
-            android:tint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/titleAgenda"
             app:layout_constraintBottom_toBottomOf="@id/titleAgenda" />
@@ -84,64 +83,109 @@
                 android:textSize="16sp"
                 android:paddingBottom="6dp" />
 
-            <GridLayout
-                android:id="@+id/gridHours"
+            <!-- Grid de horarios usando LinearLayout -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="3"
-                android:useDefaultMargins="true">
+                android:orientation="vertical">
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="10:00"
-                    android:textColor="#FFFFFF"
-                    android:backgroundTint="#00A86B"
-                    app:layout_columnWeight="1" />
+                <!-- Fila 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="12:00"
-                    app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/btn10"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="10:00"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#00A86B" />
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="13:00"
-                    app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/btn12"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="4dp"
+                        android:text="12:00" />
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="14:00"
-                    app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/btn13"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="13:00" />
+                </LinearLayout>
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="15:00"
-                    app:layout_columnWeight="1" />
+                <!-- Fila 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="16:00"
-                    app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/btn14"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="14:00" />
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="17:00"
-                    app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/btn15"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="4dp"
+                        android:text="15:00" />
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:text="18:00"
-                    app:layout_columnWeight="1" />
+                    <Button
+                        android:id="@+id/btn16"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="16:00" />
+                </LinearLayout>
 
-            </GridLayout>
+                <!-- Fila 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/btn17"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="17:00" />
+
+                    <Button
+                        android:id="@+id/btn18"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="4dp"
+                        android:text="18:00" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -172,13 +216,14 @@
                 android:layout_height="90dp"
                 android:background="@android:drawable/edit_text"
                 android:gravity="top"
-                android:padding="10dp"
-                android:hint="@string/session_note_example" />
+                android:hint="@string/session_note_example"
+                android:inputType="textMultiLine"
+                android:padding="10dp" />
 
             <Button
-                android:id="@+id/btnSiguiente"
+                android:id="@+id/btnNext"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="65dp"
                 android:text="@string/session_btn_next"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
@@ -203,13 +248,15 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:src="@drawable/list_svgrepo_com" />
+            android:src="@drawable/list_svgrepo_com"
+            />
 
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:src="@drawable/home_svgrepo_com" />
+            android:src="@drawable/home_svgrepo_com"
+             />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
