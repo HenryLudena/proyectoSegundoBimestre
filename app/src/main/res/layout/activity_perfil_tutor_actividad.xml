@@ -1,136 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:fitsSystemWindows="true">
+    android:background="#E0F7FA">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="180dp"
+        android:background="#26C6DA"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tituloPerfil"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#06C167"
-            android:gravity="center"
-            android:padding="14dp"
             android:text="Perfil del tutor"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#33FFFFFF"
+            android:layout_marginEnd="-20dp"
+            android:layout_marginTop="-20dp"
+            android:rotation="45"
+            android:backgroundTint="#40FFFFFF"
+            android:backgroundTintMode="src_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_constraintTop_toBottomOf="@id/tituloPerfil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
 
-            <!-- Perfil -->
-            <LinearLayout
+            <Space android:layout_width="match_parent" android:layout_height="20dp"/>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="16dp">
-
-                <ImageView
-                    android:id="@+id/imgTutor"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_person"
-                    android:padding="4dp" />
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="24dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp">
-
-                    <TextView
-                        android:id="@+id/nombreTutor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Juan Alberto"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:textColor="#000"/>
-
-                    <TextView
-                        android:id="@+id/materiasTutor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Matemáticas, Geometría"
-                        android:textColor="#555"
-                        android:paddingTop="4dp"/>
+                    android:orientation="vertical"
+                    android:padding="24dp">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="4dp">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                        <ImageView android:src="@drawable/ic_star" android:layout_width="20dp" android:layout_height="20dp"/>
-                        <ImageView android:src="@drawable/ic_star" android:layout_width="20dp" android:layout_height="20dp"/>
-                        <ImageView android:src="@drawable/ic_star" android:layout_width="20dp" android:layout_height="20dp"/>
-                        <ImageView android:src="@drawable/ic_star" android:layout_width="20dp" android:layout_height="20dp"/>
-                        <ImageView android:src="@drawable/ic_star" android:layout_width="20dp" android:layout_height="20dp"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:cardCornerRadius="40dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#F5F5F5">
+
+                            <ImageView
+                                android:id="@+id/imgTutor"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_person"
+                                android:scaleType="centerCrop" />
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingStart="16dp">
+
+                            <TextView
+                                android:id="@+id/nombreTutor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Juan Alberto"
+                                android:textStyle="bold"
+                                android:textSize="22sp"
+                                android:textColor="#006064"/>
+
+                            <TextView
+                                android:id="@+id/materiasTutor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Matemáticas, Geometría"
+                                android:textColor="#0097A7"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="4dp"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="6dp">
+                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
+                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
+                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
+                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
+                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#EEEEEE"
+                        android:layout_marginVertical="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sobre mí"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#37474F"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/descripcionTutor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profesor de Matemáticas con una trayectoria de más de 10 años enseñando cálculo, álgebra y geometría..."
+                        android:textColor="#546E7A"
+                        android:lineSpacingExtra="4dp"
+                        android:textSize="14sp"/>
+
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
-
-            <!-- Descripción -->
-            <TextView
-                android:id="@+id/descripcionTutor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Profesor de Matemáticas con una trayectoria de más de 10 años enseñando cálculo, álgebra y geometría..."
-                android:textColor="#444"
-                android:paddingTop="16dp"
-                android:lineSpacingExtra="4dp"
-                android:textSize="14sp"/>
-
-            <!-- Título reseñas -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reseñas"
+                android:text="Reseñas de estudiantes"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:paddingTop="20dp"
-                android:paddingBottom="8dp"
-                android:textColor="#000"/>
+                android:textColor="#006064"
+                android:layout_marginBottom="16dp"
+                android:paddingStart="4dp"/>
 
-            <!-- Reseñas -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardElevation="4dp"
-                app:cardCornerRadius="12dp">
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#E0F2F1"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:padding="12dp"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_person4"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#F5F5F5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_person4"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Excelente material de estudio y explicación"
-                        android:paddingStart="12dp"
-                        android:textColor="#333"/>
+                        android:paddingStart="16dp"
+                        android:textSize="14sp"
+                        android:textColor="#37474F"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -138,26 +216,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardElevation="4dp"
-                app:cardCornerRadius="12dp">
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#E0F2F1"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:padding="12dp"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_person2"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#F5F5F5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_person2"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Me ayudó mucho con mis pruebas."
-                        android:paddingStart="12dp"
-                        android:textColor="#333"/>
+                        android:paddingStart="16dp"
+                        android:textSize="14sp"
+                        android:textColor="#37474F"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -165,42 +257,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardElevation="4dp"
-                app:cardCornerRadius="12dp">
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#E0F2F1"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:padding="12dp"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_person3"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#F5F5F5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_person3"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Excelente trato y comunicación"
-                        android:paddingStart="12dp"
-                        android:textColor="#333"/>
+                        android:paddingStart="16dp"
+                        android:textSize="14sp"
+                        android:textColor="#37474F"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btnSiguiente"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Siguiente"
-                android:backgroundTint="#06C167"
-                android:textColor="#FFF"
-                android:padding="12dp"
-                android:textSize="16sp"
-                android:layout_marginTop="10dp"/>
-
         </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnSiguiente"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Agendar Tutoría"
+            android:backgroundTint="#26C6DA"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="28dp"
+            android:stateListAnimator="@null"/>
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
