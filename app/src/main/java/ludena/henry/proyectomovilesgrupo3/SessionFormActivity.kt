@@ -10,7 +10,7 @@ class SessionFormActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_session_form)
+        setContentView(R.layout.activity_tutor_list)
         val btnNext = findViewById<Button>(R.id.btnNext)
         btnNext.setOnClickListener {
             val intent = Intent(this, ConfirmSessionActivity::class.java)

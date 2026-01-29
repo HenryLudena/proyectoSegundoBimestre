@@ -10,7 +10,7 @@ class TutorListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_tutor_list)
+        setContentView(R.layout.activity_schedule_session)
         val showListPage = findViewById<ImageView>(R.id.btnList)
         showListPage.setOnClickListener {
             val intent = Intent(this, SessionFormActivity::class.java)
