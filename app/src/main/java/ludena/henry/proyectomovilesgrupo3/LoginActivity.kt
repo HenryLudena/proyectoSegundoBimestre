@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
         buttonLogin = findViewById(R.id.btnLogin)
         editTextEmail = findViewById(R.id.edtEmail)
         editTextPassword = findViewById(R.id.edtPassword)
+        val txtGoRegister = findViewById<TextView>(R.id.txtGoRegister)
 
         // Initialize Firebase Auth
         auth = Firebase.auth
@@ -42,6 +44,11 @@ class LoginActivity : AppCompatActivity() {
             if(!validateRequiredData())
                 return@setOnClickListener
             AutenticarUsuario(email, clave)
+        }
+
+        txtGoRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
 
     }

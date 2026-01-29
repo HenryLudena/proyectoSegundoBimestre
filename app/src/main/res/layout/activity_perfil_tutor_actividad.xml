@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0F7FA">
+    android:background="#E0F7FA"
+    android:id="@+id/main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerContainer"
@@ -13,6 +14,16 @@
         android:layout_height="180dp"
         android:background="#26C6DA"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/back_svgrepo_com"
+            app:tint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tituloPerfil"
@@ -22,10 +33,11 @@
             android:textColor="#FFFFFF"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp" />
 
         <View
             android:layout_width="100dp"
@@ -46,7 +58,7 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingBottom="100dp"
-        app:layout_constraintTop_toBottomOf="@id/tituloPerfil"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,17 +133,16 @@
                                 android:textStyle="bold"
                                 android:layout_marginTop="4dp"/>
 
-                            <LinearLayout
+                            <RatingBar
+                                android:id="@+id/ratingBarTutor"
+                                style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginTop="6dp">
-                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
-                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
-                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
-                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
-                                <ImageView android:src="@drawable/ic_star" android:layout_width="18dp" android:layout_height="18dp" app:tint="#FFCA28"/>
-                            </LinearLayout>
+                                android:numStars="5"
+                                android:stepSize="0.5"
+                                android:isIndicator="true"
+                                android:rating="0"/>
+
                         </LinearLayout>
                     </LinearLayout>
 

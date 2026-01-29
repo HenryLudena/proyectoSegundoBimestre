@@ -277,6 +277,20 @@
                     android:elevation="4dp"
                     android:stateListAnimator="@null"/>
 
+                <TextView
+                    android:id="@+id/txtGoLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Ya tienes cuenta? Inicia sesión"
+                    android:textColor="#26C6DA"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>

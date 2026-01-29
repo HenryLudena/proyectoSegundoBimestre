@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         editDescripcion = findViewById(R.id.edtProfessionalDescription)
         editEmail = findViewById(R.id.edtEmail)
         editPassword = findViewById(R.id.edtPassword)
+        val txtGoLogin = findViewById<TextView>(R.id.txtGoLogin)
 
         auth = Firebase.auth
 
@@ -55,6 +57,10 @@ class RegisterActivity : AppCompatActivity() {
                 calificacion = 0.0
             )
             registrarTutor(email, password, tutor)
+        }
+
+        txtGoLogin.setOnClickListener {
+            finish()
         }
 
     }
